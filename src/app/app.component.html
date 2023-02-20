@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-sm-2">
+      <div class="card border-dark mb-3" style="max-width: 18rem; text-align: center">
+        <div class="card-header" style="text-align: center" [routerLink]="['/']"><h1><i class="bi bi-database-gear"></i></h1></div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">MCP</h5>
+          <p class="card-text">Mass calculation process module</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>

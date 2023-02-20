@@ -1,0 +1,21 @@
+<h3>Processes</h3>
+
+<ul class="list-group mt-4">
+  <a *ngFor="let process of processes" class="list-group-item list-group-item-action" [routerLink]="['/processes', process.code]">
+    <div class="row">
+      <div class="col-sm-7">
+        <div><b>{{process.code}}</b></div>
+        <div style="font-size: small">{{process.name}}</div>
+      </div>
+      <div class="col-sm-2">
+        <div style="font-size: small">Last run</div>
+        <div>{{process.lastRun | date}}</div>
+      </div>
+      <div class="col-sm-2">
+        <div style="font-size: small">Last run status</div>
+        <span class="badge" [ngClass]="process.lastStatus == 'Success' ? 'bg-success' : 'bg-danger'">{{process.lastStatus}}</span>
+      </div>
+      <div class="col-sm-1 mt-2"><i class="bi bi-chevron-right"></i></div>
+    </div>
+  </a>
+</ul>

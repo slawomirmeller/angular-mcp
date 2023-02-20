@@ -1,0 +1,19 @@
+<h1>Messages</h1>
+<a [routerLink]="['/processes', processCode, processId]">Back to steps of {{processCode}} process</a>
+
+<ul class="list-group mt-4">
+  <li *ngFor="let message of messages" class="list-group-item">
+    <div class="row">
+      <div class="col-sm-1">
+        <div><b>#{{message.sequenceNo}}</b></div>
+      </div>
+      <div class="col-sm-2">
+        <div><b>{{message.code}}</b></div>
+      </div>
+      <div class="col-sm-7">
+        <div>{{message.text}}</div>
+      </div>
+      <div class="col-sm-2"><span class="badge" [ngClass]="getMessageTypeClass(message.type)">{{message.type}}</span></div>
+    </div>
+  </li>
+</ul>

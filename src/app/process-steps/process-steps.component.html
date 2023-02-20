@@ -1,0 +1,42 @@
+<h1>Steps</h1>
+<a [routerLink]="['/processes', processCode]">Back to {{processCode}} process runs</a>
+
+<ul class="list-group mt-4">
+  <li *ngFor="let step of steps" class="list-group-item">
+    <div class="row">
+      <div class="col-sm-1 mt-2">
+        <div><b>#{{step.stepNo}}</b></div>
+      </div>
+      <div class="col-sm-3">
+        <div><b>{{step.code}}</b></div>
+        <div style="font-size: small">{{step.name}}</div>
+      </div>
+      <div class="col-sm-2">
+        <div style="font-size: small" *ngIf="step.startedOn">Started on</div>
+        <div>{{step.startedOn | date}}</div>
+      </div>
+      <div class="col-sm-2">
+        <div style="font-size: small" *ngIf="step.progress">Progress</div>
+        <div>{{step.progress | percent}}</div>
+      </div>
+      <div class="col-sm-2 mt-2"><span class="badge" [ngClass]="getStatusClass(step.status)">{{step.status}}</span></div>
+      <div class="col-sm-2 mt-2">
+      <div class="dropdown">
+        <a class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Actions
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Start/Restart</a></li>
+          <li><a class="dropdown-item" href="#">Accept</a></li>
+          <li><a class="dropdown-item" href="#">Show results</a></li>
+          <li><a class="dropdown-item" href="#">Export results</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/processes', processCode, processId, step.id, 'messages']">Show messages</a></li>
+          <li><a class="dropdown-item" href="#">Export messages</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/processes', processCode, processId, step.id, 'details']" [state]="step">Details</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </li>
+</ul>

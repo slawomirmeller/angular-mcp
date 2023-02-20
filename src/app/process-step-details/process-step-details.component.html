@@ -1,0 +1,69 @@
+<h1>Step detail</h1>
+<a [routerLink]="['/processes', processCode, processId]">Back to steps of {{processCode}} process</a>
+
+<div *ngIf="step">
+  <div class="row">
+    <div class="col col-lg-4">Id</div>
+    <div class="col col-lg-4">{{step.id}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">stepNo</div>
+    <div class="col col-lg-4">{{step.stepNo}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">processId</div>
+    <div class="col col-lg-4">{{step.processId}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">code</div>
+    <div class="col col-lg-4">{{step.code}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">name</div>
+    <div class="col col-lg-4">{{step.name}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">creationDate</div>
+    <div class="col col-lg-4">{{step.creationDate | date}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">createdBy</div>
+    <div class="col col-lg-4">{{step.createdBy}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">modificationDate</div>
+    <div class="col col-lg-4">{{step.modificationDate | date}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">modifiedBy</div>
+    <div class="col col-lg-4">{{step.modifiedBy}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">status</div>
+    <div class="col col-lg-4">{{step.status}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">startedBy</div>
+    <div class="col col-lg-4">{{step.startedBy}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">startedOn</div>
+    <div class="col col-lg-4">{{step.startedOn | date}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">finishedOn</div>
+    <div class="col col-lg-4">{{step.finishedOn | date}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">acceptanceDate</div>
+    <div class="col col-lg-4">{{step.acceptanceDate | date}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">acceptedBy</div>
+    <div class="col col-lg-4">{{step.acceptedBy}}</div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">acceptanceDate</div>
+    <div class="col col-lg-4">{{step.progress | percent}}</div>
+  </div>
+</div>

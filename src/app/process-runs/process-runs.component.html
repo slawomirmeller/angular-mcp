@@ -1,0 +1,21 @@
+<h3>{{processCode}} processes</h3>
+<a routerLink="">Back to processes</a>
+
+<ul class="list-group mt-4">
+  <a *ngFor="let run of runs" class="list-group-item list-group-item-action" [routerLink]="['/processes', processCode, run.id]">
+    <div class="row">
+      <div class="col-sm-7">
+        <div><b>{{run.code}}</b></div>
+        <div style="font-size: small">{{run.id}}</div>
+      </div>
+      <div class="col-sm-2">
+        <div style="font-size: small">Started on</div>
+        <div>{{run.startedOn | date}}</div>
+      </div>
+      <div class="col-sm-2 mt-2">
+        <span class="badge" [ngClass]="getStatusClass(run.status)">{{run.status}}</span>
+      </div>
+      <div class="col-sm-1 mt-2"><i class="bi bi-chevron-right"></i></div>
+    </div>
+  </a>
+</ul>
